@@ -1,10 +1,24 @@
 module.exports = {
   content: [
-    "./index.html",
-    "./src/**/*.{vue,js,ts,jsx,tsx}",
+    "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        brand: {
+          dark: "#262626",
+          red: "#EB3237",
+          blood: "#D81B20",          
+          zinc: {
+            100: '#F8F8F8',
+            200:'#858585', 
+          }        
+        },
+      },
+    },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
+  daisyui: {
+    themes: false,
+  },
 }

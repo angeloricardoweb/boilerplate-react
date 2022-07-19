@@ -12,7 +12,9 @@ function App() {
         <p>Este template usa as seguintes dependências</p>
         <ul className="text-center">
           <li>Sass</li>
-          <li>Tailwind</li>
+          <li>Tailwind Css</li>
+          <li>DaisyUI</li>
+          <li>Swiper JS</li>
           <li>React Router Dom 6</li>
         </ul>
       </div>
