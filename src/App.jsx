@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Home from './views/Home';
 import Contato from './views/Contato';
 import { Header } from "./components/Header";
@@ -7,22 +7,26 @@ function App() {
 
   return (
     <>
-      <Header />
-      <div className="flex justify-center flex-col items-center py-4">
-        <p>Este template usa as seguintes dependências</p>
-        <ul className="text-center">
-          <li>Sass</li>
-          <li>Tailwind Css</li>
-          <li>DaisyUI</li>
-          <li>Swiper JS</li>
-          <li>React Router Dom 6</li>
-        </ul>
-      </div>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/contato" element={<Contato />} />
-      </Routes>
-      <Footer />
+      <BrowserRouter>
+        <Header />
+        <div className="flex justify-center flex-col items-center py-4">
+          <p>Este template usa as seguintes dependências</p>
+          <ul className="text-center">
+            <li>Sass</li>
+            <li>Tailwind Css</li>
+            <li>DaisyUI</li>
+            <li>Swiper JS</li>
+            <li>React Router Dom 6</li>
+            <li>React Icons</li>
+          </ul>
+        </div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/contato" element={<Contato />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+
     </>
   )
 }
