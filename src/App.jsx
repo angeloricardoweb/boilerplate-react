@@ -1,10 +1,10 @@
-import { Routes, Route, BrowserRouter } from "react-router-dom";
-import Home from './pages/Home';
-import Contato from './pages/Contato';
-import { Header } from "./components/Header";
-import { Footer } from "./components/Footer";
-function App() {
+import { Routes, Route, BrowserRouter } from 'react-router-dom'
+import Home from './pages/Home'
+import Contato from './pages/Contato'
+import { Header } from './components/Header'
+import { Footer } from './components/Footer'
 
+function App() {
   return (
     <>
       <BrowserRouter>
@@ -26,9 +26,9 @@ function App() {
         </Routes>
         <Footer />
       </BrowserRouter>
-
     </>
   )
 }
 
 export default App
+
