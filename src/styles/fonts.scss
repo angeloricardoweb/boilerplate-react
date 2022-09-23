@@ -1,5 +1,5 @@
 * {
-    font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 p,
@@ -10,24 +10,24 @@ h2,
 h3,
 h4,
 h5 {
-    color: #696969;
+  color: #696969;
 }
 
 
 h2 {
-    @apply text-3xl;
+  @apply text-3xl;
 }
 
 @media (max-width: 1080px) {
-    html {
-        font-size: 93.75%;
-    }
+  html {
+    font-size: 93.75%;
+  }
 }
 
 @media (max-width: 1080px) {
-    html {
-        font-size: 87.5%;
-    }
+  html {
+    font-size: 87.5%;
+  }
 }
 
 body,
@@ -35,5 +35,5 @@ input,
 select,
 textarea,
 button {
-    font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif;
 }

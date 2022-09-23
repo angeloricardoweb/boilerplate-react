@@ -1,28 +1,26 @@
 module.exports = {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-  ],
+  content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
       colors: {
         brand: {
           green: {
-            100: "#C5E884"
+            100: '#C5E884',
           },
           blue: {
             50: '#EBFCFF',
             100: '#7AB2FF',
             400: '#154F90',
-            600: '#003787'
+            600: '#003787',
           },
           yellow: {
-            100: "#FFD454"
+            100: '#FFD454',
           },
         },
       },
     },
   },
-  plugins: [require("daisyui")],
+  plugins: [require('daisyui')],
   daisyui: {
     themes: false,
   },
