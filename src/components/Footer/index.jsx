@@ -1,7 +1,20 @@
 import React from 'react'
-import styles from './style.module.scss'
+import { useFetch } from '../../services/useFetch'
+import { useFetchByContrato } from '../../services/useFetchByContrato'
 
 export function Footer() {
-  return <footer className="text-center">By: Angelo Ricardo</footer>
-}
+  // const { data } = useFetch('/front-end') //oficial
 
+  const { data } = useFetchByContrato('/front-end') //contrato
+
+  return (
+    <footer className="text-center">
+      <div>
+        {data &&
+          React.Children.toArray(
+            data.results.map((item) => <p>{item.name}</p>)
+          )}
+      </div>
+    </footer>
+  )
+}
