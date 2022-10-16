@@ -15,7 +15,11 @@ h5 {
 
 
 h2 {
-  @apply text-3xl;
+  @apply text-3xl font-bold;
+}
+
+h2 {
+  @apply text-xl font-bold;
 }
 
 @media (max-width: 1080px) {
