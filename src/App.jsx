@@ -7,6 +7,7 @@ import { Header } from './components/Header'
 import { Footer } from './components/Footer'
 import { DrawerMenu } from './components/DrawerMenu'
 import { GlobalContextProvider } from './context/GlobalContextProvider'
+import { BoxCookies } from './components/Partials/BoxCookies'
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             },
           }}
         />
+        <BoxCookies/>
         </DrawerMenu>
       </BrowserRouter>
     </GlobalContextProvider>
