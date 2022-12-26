@@ -4,7 +4,9 @@ import App from './App'
 import 'swiper/css/bundle'
 import './styles/index.scss'
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+const root = document.getElementById('root')!
+
+ReactDOM.createRoot(root).render(
   <React.StrictMode>
     <App />
   </React.StrictMode>

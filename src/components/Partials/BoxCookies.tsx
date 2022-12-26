@@ -4,14 +4,18 @@ import Cookies from 'js-cookie';
 import { useState } from 'react';
 
 export const BoxCookies = () => {
-  let cookies =
-    Cookies.get('user-accept-cookies') &&
-    JSON.parse(JSON.parse(Cookies.get('user-accept-cookies')));
-  console.log(cookies);
+  let cookies = Cookies.get('user-accept-cookies');
   const [openBoxCookie, setOpenBoxCookie] = useState(true);
 
+  function setCookie() {
+    Cookies.set('user-accept-cookies', "hasCookie", {
+      expires: 31557600,
+    });
+    setOpenBoxCookie(false);
+  }
+
   return (
-    <div div className='main_container'>
+    <div className='main_container'>
       {openBoxCookie && !cookies && (
         <div className=" flex flex-col px-6 py-2 justify-between bg-brand-gray-300 border w-full md:max-w-[900px] z-[101] position-center">
           <div>
@@ -32,16 +36,7 @@ export const BoxCookies = () => {
               Política de Privacidade
             </HashLink>
             <button
-              onClick={() =>
-                Cookies.set(
-                  'user-accept-cookies',
-                  true,
-                  {
-                    expires: 31557600,
-                  },
-                  setOpenBoxCookie(false)
-                )
-              }
+              onClick={setCookie}
             >
               Aceitar
             </button>

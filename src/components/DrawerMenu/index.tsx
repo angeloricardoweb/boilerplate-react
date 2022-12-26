@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function DrawerMenu({ children }) {
+export function DrawerMenu({ children }:{children:React.ReactNode}) {
   return (
     <div className="drawer drawer-end">
       <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />

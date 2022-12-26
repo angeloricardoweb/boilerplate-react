@@ -10,10 +10,11 @@ export function Footer() {
   return (
     <footer className="text-center">
       <div>
-        {data &&
+        {/* {data &&
           React.Children.toArray(
             data.results.map((item) => <p>{item.name}</p>)
-          )}
+          )} */}
+          Rodapé
       </div>
     </footer>
   )
