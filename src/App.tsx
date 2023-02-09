@@ -14,7 +14,7 @@ function App() {
     <GlobalContextProvider>
       <BrowserRouter>
         <DrawerMenu>
-          <Header />
+          {/* <Header /> */}
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/contato" element={<Contato />} />
