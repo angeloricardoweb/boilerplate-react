@@ -24,20 +24,12 @@ export function FormExample() {
     reset,
   } = useForm<FormData>({ resolver: zodResolver(loginSchema) });
 
-
-
-
-
   const handleLogin = async ({ email, senha }: FormData) => {
     // dentro da função todos os dados já estão com a tipagem correta e validados :)
     await new Promise((resolve) => setTimeout(resolve, 1500));
     console.log(email, senha);
   };
 
-
-
-
-  
   return (
     <div className="main_container">
       <h2>Exemplo de formulário com validação usando React Hook Form</h2>
@@ -52,11 +44,10 @@ export function FormExample() {
             />
             <label>E-mail</label>
           </div>
-          {errors.email && (
-            <LabelError
-              errorMessage={errors.email.message ?? 'Erro no campo senha'}
-            />
-          )}
+          <LabelError
+            hasError={Boolean(errors.email)}
+            errorMessage={errors.email?.message ?? 'Erro no campo senha'}
+          />
           <div className="label-float mt-3">
             <input
               type="password"
@@ -66,11 +57,10 @@ export function FormExample() {
             />
             <label>Senha</label>
           </div>
-          {errors.senha && (
-            <LabelError
-              errorMessage={errors.senha.message ?? 'Erro no campo senha'}
-            />
-          )}
+          <LabelError
+            hasError={Boolean(errors.senha)}
+            errorMessage={errors.senha?.message ?? 'Erro no campo senha'}
+          />
           <span>Esqueceu a senha?</span>{' '}
           <span>
             <Link to={'#'}>Recuperar</Link>
