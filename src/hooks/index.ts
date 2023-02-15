@@ -1,2 +1,2 @@
 export { useEffectOnScroll } from './useEffectOnScroll';
-export { useWholeSale } from './useWholeSale';
+export { useScrollToTop } from './useScrollToTop';
