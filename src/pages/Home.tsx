@@ -32,10 +32,10 @@ export default function Home() {
             </a>
             <a
               className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 text-white hover:bg-white/20"
-              href="https://daisyui.com"
+              href="#"
               target="_blank"
             >
-              <h3 className="text-2xl font-bold text-white">Daisy UI →</h3>
+              <h3 className="text-2xl font-bold text-white"> →</h3>
               <div className="text-lg">
                 Documentação da nossa principal biblioteca de componentes.
               </div>
