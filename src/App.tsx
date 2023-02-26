@@ -3,9 +3,7 @@ import { Toaster } from 'react-hot-toast';
 import Home from './pages/Home';
 import { FormExample } from './pages/Form';
 import PageNotFound from './pages/404';
-import { Header } from './components/Header';
 import { Footer } from './components/Footer';
-import { DrawerMenu } from './components/DrawerMenu';
 import { GlobalContextProvider } from './context/GlobalContextProvider';
 import { BoxCookies } from '@components/Partials/BoxCookies';
 
