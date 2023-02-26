@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import ButtonOutiline from '../components/Buttons/ButtonOutline';
-import ButtonPrimary from '../components/Buttons/ButtonPrimary';
-import { LabelError } from '../components/Forms/LabelError';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
+import { LabelError } from '@components/Forms/LabelError';
+import ButtonPrimary from '@components/Buttons/ButtonPrimary';
+import ButtonOutline from '@components/Buttons/ButtonOutline';
 
 const loginSchema = z.object({
   email: z.string().email({ message: 'Email inválido!' }),
@@ -73,7 +73,7 @@ export function FormExample() {
             >
               Entrar
             </ButtonPrimary>
-            <ButtonOutiline onClick={() => { }}>Cadastar</ButtonOutiline>
+            <ButtonOutline onClick={() => { }}>Cadastar</ButtonOutline>
           </div>
         </>
       </form>
