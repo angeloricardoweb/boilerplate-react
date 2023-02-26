@@ -65,15 +65,15 @@ export function FormExample() {
           <span>
             <Link to={'#'}>Recuperar</Link>
           </span>
-          <div>
+          <div className='flex gap-3 py-4'>
             <ButtonPrimary
               type="submit"
-              onClick={() => {}}
+              onClick={() => { }}
               disabled={isSubmitting}
             >
               Entrar
             </ButtonPrimary>
-            <ButtonOutiline onClick={() => {}}>Cadastar</ButtonOutiline>
+            <ButtonOutiline onClick={() => { }}>Cadastar</ButtonOutiline>
           </div>
         </>
       </form>

@@ -1,7 +1,15 @@
-import { ButtonPrimaryProps } from './type'
+import React from 'react';
 
-export default function ButtonPrimary({ children, onClick, type = 'button', disabled = false }: ButtonPrimaryProps) {
+export default function ButtonPrimary(
+  props: React.DetailedHTMLProps<
+    React.ButtonHTMLAttributes<HTMLButtonElement>,
+    HTMLButtonElement
+  >
+) {
   return (
-    <button className="btn btn-primary" onClick={onClick} type={type} disabled={disabled}>{children}</button>
-  )
+    <button
+      {...props}
+      className="btn btn-primary"
+    />
+  );
 }

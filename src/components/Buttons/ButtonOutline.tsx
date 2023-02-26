@@ -9,7 +9,7 @@ export default function ButtonOutline(
   return (
     <button
       {...props}
-      className="btn btn-outline flex items-center gap-2 first:hover:text-white w-full sm:w-fit"
+      className="btn btn-outline"
     />
   );
 }
