@@ -5,6 +5,7 @@ import * as z from 'zod';
 import { LabelError } from '@components/Forms/LabelError';
 import ButtonPrimary from '@components/Buttons/ButtonPrimary';
 import ButtonOutline from '@components/Buttons/ButtonOutline';
+import MainLayout from '@components/Layout/MainLayout';
 
 const loginSchema = z.object({
   email: z.string().email({ message: 'Email inválido!' }),
@@ -31,52 +32,54 @@ export function FormExample() {
   };
 
   return (
-    <div className="main_container">
-      <h2>Exemplo de formulário com validação usando React Hook Form</h2>
-      <form onSubmit={handleSubmit(handleLogin)}>
-        <>
-          <div className="label-float mt-3">
-            <input
-              type="email"
-              placeholder=" "
-              style={errors.email && { border: '1px solid red' }}
-              {...register('email')}
+    <MainLayout>
+      <div className="main_container">
+        <h2>Exemplo de formulário com validação usando React Hook Form</h2>
+        <form onSubmit={handleSubmit(handleLogin)}>
+          <>
+            <div className="label-float mt-3">
+              <input
+                type="email"
+                placeholder=" "
+                style={errors.email && { border: '1px solid red' }}
+                {...register('email')}
+              />
+              <label>E-mail</label>
+            </div>
+            <LabelError
+              hasError={Boolean(errors.email)}
+              errorMessage={errors.email?.message ?? 'Erro no campo senha'}
             />
-            <label>E-mail</label>
-          </div>
-          <LabelError
-            hasError={Boolean(errors.email)}
-            errorMessage={errors.email?.message ?? 'Erro no campo senha'}
-          />
-          <div className="label-float mt-3">
-            <input
-              type="password"
-              placeholder=" "
-              {...register('senha')}
-              style={errors.senha && { border: '1px solid red' }}
+            <div className="label-float mt-3">
+              <input
+                type="password"
+                placeholder=" "
+                {...register('senha')}
+                style={errors.senha && { border: '1px solid red' }}
+              />
+              <label>Senha</label>
+            </div>
+            <LabelError
+              hasError={Boolean(errors.senha)}
+              errorMessage={errors.senha?.message ?? 'Erro no campo senha'}
             />
-            <label>Senha</label>
-          </div>
-          <LabelError
-            hasError={Boolean(errors.senha)}
-            errorMessage={errors.senha?.message ?? 'Erro no campo senha'}
-          />
-          <span>Esqueceu a senha?</span>{' '}
-          <span>
-            <Link to={'#'}>Recuperar</Link>
-          </span>
-          <div className='flex gap-3 py-4'>
-            <ButtonPrimary
-              type="submit"
-              onClick={() => { }}
-              disabled={isSubmitting}
-            >
-              Entrar
-            </ButtonPrimary>
-            <ButtonOutline onClick={() => { }}>Cadastar</ButtonOutline>
-          </div>
-        </>
-      </form>
-    </div>
+            <span>Esqueceu a senha?</span>{' '}
+            <span>
+              <Link to={'#'}>Recuperar</Link>
+            </span>
+            <div className='flex gap-3 py-4'>
+              <ButtonPrimary
+                type="submit"
+                onClick={() => { }}
+                disabled={isSubmitting}
+              >
+                Entrar
+              </ButtonPrimary>
+              <ButtonOutline onClick={() => { }}>Cadastar</ButtonOutline>
+            </div>
+          </>
+        </form>
+      </div>
+    </MainLayout>
   );
 }

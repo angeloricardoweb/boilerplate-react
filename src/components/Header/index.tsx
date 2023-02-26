@@ -1,4 +1,8 @@
 export function Header() {
-  return <div className="fixed"></div>;
+  return (
+    <div>
+      <h2>Header</h2>
+    </div>
+  );
 }
 

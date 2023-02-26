@@ -1,48 +1,64 @@
-import React from 'react';
-import { HashLink } from 'react-router-hash-link';
 import Cookies from 'js-cookie';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import ButtonPrimary from '@components/Buttons/ButtonPrimary';
+import ButtonOutline from '@components/Buttons/ButtonOutline';
+import privacyPolicyModalStore from '@stores/modals/privacyPolicyModalStore';
 
 export const BoxCookies = () => {
-  let cookies = Cookies.get('user-accept-cookies');
+  const { setModalState } = privacyPolicyModalStore()
   const [openBoxCookie, setOpenBoxCookie] = useState(true);
 
   function setCookie() {
     Cookies.set('user-accept-cookies', "hasCookie", {
       expires: 31557600,
     });
-    setOpenBoxCookie(false);
+    setOpenBoxCookie(false)
   }
 
+  function checkCookie() {
+    const cookie = Cookies.get('user-accept-cookies');
+    if (!cookie) {
+      setOpenBoxCookie(true)
+    } else {
+      setOpenBoxCookie(false)
+    }
+  }
+
+  useEffect(() => {
+    checkCookie()
+  }, [])
+
   return (
-    <div className='main_container'>
-      {openBoxCookie && !cookies && (
-        <div className=" flex flex-col px-6 py-2 justify-between bg-brand-gray-300 border w-full md:max-w-[900px] z-[101] position-center">
-          <div>
-            <h4 className="text-brand-gray-100 text-2xl font-semibold">
-              Esse site usa cookies
-            </h4>
-            <p className="my-4 md:my-2">
-              Nós armazenamos dados temporariamente para melhorar a sua
-              experiência de navegação e recomendar conteúdo de seu interesse.
-              Ao utilizar nossos serviços, você concorda com tal monitoramento.
-            </p>
-          </div>
-          <div className="flex justify-between items-center">
-            <HashLink
-              to="/politica-de-privacidade#inicio-privacidade"
-              className="link"
-            >
-              Política de Privacidade
-            </HashLink>
-            <button
-              onClick={setCookie}
-            >
-              Aceitar
-            </button>
-          </div>
+    <div className='absolute bg-zinc-200 w-full border-t-4 border-cyan-400 transition-all bottom-0'
+      style={{
+        display: openBoxCookie ? 'block' : 'none',
+      }}
+    >
+      <div className="p-5">
+        <div>
+          <h4 className="text-brand-gray-100 text-2xl font-semibold">
+            Esse site usa cookies
+          </h4>
+          <p className="my-4 md:my-2">
+            Nós armazenamos dados temporariamente para melhorar a sua
+            experiência de navegação e recomendar conteúdo de seu interesse.
+            Ao utilizar nossos serviços, você concorda com tal monitoramento.
+          </p>
         </div>
-      )}
+        <div className="flex justify-between items-center">
+          <ButtonOutline
+            onClick={() => setModalState(true)}
+          >
+            Política de Privacidade
+          </ButtonOutline>
+          <ButtonPrimary
+            onClick={setCookie}
+          >
+            Aceitar
+          </ButtonPrimary>
+        </div>
+      </div>
     </div>
   );
 };
+

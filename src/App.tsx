@@ -6,19 +6,23 @@ import { Footer } from '@components/Footer';
 import Home from '@pages/Home';
 import { FormExample } from '@pages/Form';
 import PageNotFound from '@pages/404';
+import Presentation from '@pages/Presentation';
+import Modals from '@components/Modals';
 
 function App() {
   return (
     <GlobalContextProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
+          {/* remove this route to start */}
+          <Route path="/" element={<Presentation />} />
+          {/* <Route path="/" element={<Home />} /> */}
           <Route path="/contato" element={<FormExample />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
-        <Footer />
-        <ToasterComponent />
         <BoxCookies />
+        <Modals/>
+        <ToasterComponent />
       </BrowserRouter>
     </GlobalContextProvider>
   );
