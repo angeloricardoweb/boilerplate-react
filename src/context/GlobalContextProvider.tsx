@@ -1,23 +1,35 @@
-import React, { useState, createContext, useContext, useRef } from 'react'
-import { GlobalContextData } from './type'
+import React, { useState, createContext, useContext, useRef } from 'react';
 
-export const GlobalContext = createContext<GlobalContextData>({} as GlobalContextData)
+type GlobalContextData = {
+  swiperNoticiaInstance: any;
+  setSwiperNoticiaInstance: (swiper: any) => void;
+  drawerMenuRef: any;
+};
 
-export function GlobalContextProvider({ children }: { children: React.ReactNode }) {
-  const [swiperNoticiaInstance, setSwiperNoticiaInstance] = useState()
-  const drawerMenuRef = useRef()
+export const GlobalContext = createContext<GlobalContextData>(
+  {} as GlobalContextData
+);
+
+export function GlobalContextProvider({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const [swiperNoticiaInstance, setSwiperNoticiaInstance] = useState();
+  const drawerMenuRef = useRef();
 
   const data = {
     swiperNoticiaInstance,
     setSwiperNoticiaInstance,
-    drawerMenuRef
-  }
+    drawerMenuRef,
+  };
 
   return (
     <GlobalContext.Provider value={data}>{children}</GlobalContext.Provider>
-  )
+  );
 }
 
 export const useGlobal = () => {
-  return useContext(GlobalContext)
-}
+  return useContext(GlobalContext);
+};
+

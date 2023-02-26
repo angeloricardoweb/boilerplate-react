@@ -13,7 +13,6 @@
     "@types/js-cookie": "^3.0.2",
     "@types/react-router-hash-link": "^2.4.5",
     "axios": "^1.0.0",
-    "daisyui": "^2.42.1",
     "js-cookie": "^3.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -26,11 +25,13 @@
     "swiper": "^8.3.1",
     "swr": "^2.0.0",
     "typescript": "^4.9.4",
-    "zustand": "^4.3.2",
-    "zod": "^3.20.2"
+    "vite-tsconfig-paths": "^4.0.5",
+    "zod": "^3.20.2",
+    "zustand": "^4.3.2"
   },
   "devDependencies": {
     "@iconify/react": "^4.0.1",
+    "@total-typescript/ts-reset": "^0.3.7",
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
     "@vitejs/plugin-react": "^2.0.0",

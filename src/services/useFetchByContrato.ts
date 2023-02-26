@@ -1,8 +1,13 @@
-import useSWR from "swr";
-import { api } from "./axios";
+import useSWR from 'swr';
+import { api } from './axios';
 
-export function useFetchByContrato(url: string) {
-  const { data, error, isLoading } = useSWR(url, async (url) => {
+
+/** 
+ * @param url - url do contrato 
+ * @param T - tipo do valor retornado
+*/
+export function useFetchByContrato<T>(url: string) {
+  const { data, error, isLoading } = useSWR<T, Error>(url, async (url) => {
     const response = await api.get(
       `https://api-temp.vercel.app/api/bredi-team${url}`
     );
@@ -11,3 +16,4 @@ export function useFetchByContrato(url: string) {
 
   return { data, error, isLoading };
 }
+

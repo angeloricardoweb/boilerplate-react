@@ -1,30 +1,30 @@
 /* form */
 
 label {
-  @apply block font-bold text-sm text-gray-100;
+  @apply block text-sm font-bold text-gray-100;
 }
 
 .input-default {
-  @apply input input-bordered text-gray-100 py-3 font-normal px-4 border;
+  @apply border py-3 px-4 font-normal text-gray-100;
 }
 
 .select-default {
-  @apply select select-bordered text-gray-100 py-3 font-normal px-4 border;
+  @apply border py-3 px-4 font-normal text-gray-100;
 }
 
 textarea {
-  @apply textarea text-gray-100 py-3 font-normal px-4 border;
+  @apply border py-3 px-4 font-normal text-gray-100;
 }
 
 // input type text
 
-input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="url"],
-input[type="tel"],
-input[type="number"],
-input[type="search"] {
+input[type='text'],
+input[type='password'],
+input[type='email'],
+input[type='url'],
+input[type='tel'],
+input[type='number'],
+input[type='search'] {
   width: 100%;
   border: 1px solid #ccc;
   padding: 1rem;
@@ -44,7 +44,7 @@ input[type="search"] {
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
   -webkit-appearance: none;
-  &:disabled{
+  &:disabled {
     background: #f6f7ff;
     border: none;
   }
@@ -71,7 +71,7 @@ input[type="search"] {
 }
 
 .label-float input:required:invalid + label:before {
-  content: "*";
+  content: '*';
 }
 .label-float input:focus + label,
 .label-float input:not(:placeholder-shown) + label {
