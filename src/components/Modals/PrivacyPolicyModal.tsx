@@ -15,10 +15,6 @@ export function PrivacyPolicyModal() {
         className="bg-white p-5 rounded-xl max-w-3xl"
       >
         <Dialog.Title>Política de Privacidade</Dialog.Title>
-        {/* <Dialog.Description>
-          This will permanently deactivate your account
-        </Dialog.Description> */}
-
         <p className='py-3'>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, soluta saepe, nobis enim consequuntur quisquam animi amet aliquid non libero a nulla repudiandae suscipit quibusdam velit expedita beatae alias dolorem.
         </p>
