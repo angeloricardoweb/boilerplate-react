@@ -1,0 +1,13 @@
+{
+  "React TSX Function Component": {
+    "prefix": ["tsx"],
+    "body": [
+      "export default function ${1:MyComponent}(${2}) {",
+      "\treturn (",
+      "\t\t<>$0</>",
+      "\t)",
+      "}"
+    ],
+    "description": "React TSX Function Component."
+  }
+}
